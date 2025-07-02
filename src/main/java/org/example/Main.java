@@ -26,22 +26,22 @@ public class Main {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Você escolheu: Dólar para Peso argentino");
+                    converterMoeda("USD", "ARS", "Dólar", "Peso argentino");
                     break;
                 case 2:
-                    System.out.println("Você escolheu: Peso argentino para Dólar");
+                    converterMoeda("ARS", "USD", "Peso argentino", "Dólar");
                     break;
                 case 3:
-                    System.out.println("Você escolheu: Dólar para Real brasileiro");
+                    converterMoeda("USD", "BRL", "Dólar", "Real Brasileiro");
                     break;
                 case 4:
-                    System.out.println("Você escolheu: Real brasileiro para Dólar");
+                    converterMoeda("BRL", "USD", "Real Brasileiro", "Dólar");
                     break;
                 case 5:
-                    System.out.println("Você escolheu: Dólar para Peso colombiano");
+                    converterMoeda("USD", "COP", "Dólar", "Peso colombiano");
                     break;
                 case 6:
-                    System.out.println("Você escolheu: Peso colombiano para Dólar");
+                    converterMoeda("COP", "USD", "Peso colombiano", "Dólar");
                     break;
                 case 7:
                     System.out.println("Saindo do programa...");
@@ -53,5 +53,20 @@ public class Main {
             System.out.println();
         }
         ler.close();
+    }
+
+    private static void converterMoeda(String de, String para, String nomeOrigem, String nomeDestino) {
+        Scanner ler = new Scanner(System.in);
+        System.out.printf("Você escolheu: %s para %s%n", nomeOrigem, nomeDestino);
+        System.out.printf("Digite o valor em %s: ", nomeOrigem);
+
+        double valor = ler.nextDouble();
+
+        double resultado = ConversorMoeda.converter(de, para, valor);
+        if (resultado != -1) {
+            System.out.printf("Valor convertido com sucesso: %.2f %s = %.2f %s%n", valor, de, resultado, para);
+        } else {
+            System.out.println("Erro ao realizar a conversão.");
+        }
     }
 }
