@@ -16,12 +16,6 @@ Este é um projeto de console em Java que realiza a conversão de moedas em temp
 
 ---
 
-## 📷 Demonstração
-
-![Demonstração do console](caminho/para/screenshot.png)
-
----
-
 ## 🧰 Tecnologias utilizadas
 
 - Java 17+
